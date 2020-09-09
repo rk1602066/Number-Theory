@@ -19,11 +19,9 @@ void memoryEfficientSimpleSieve( ll n,vector<ll>&primesdivisor){
 
 void segmentedSieve(ll left,ll right){
     ll uprange=sqrt(right)+1;
-    bitset<btsize>isprime;
     vector<ll>primesdivisor;
     vector<ll>primesinRange;
     memoryEfficientSimpleSieve(uprange,primesdivisor);
-    isprime.set();
     for(ll i=left;i<=right;i++){
             bool isitprime = true;
         if(i%2==0&&i>2)continue;
@@ -43,6 +41,7 @@ int main()
 {
     ll left,right;
     cin>>left>>right;
+    if(left<2)left++;
     cout<<"all the primes are: "<<endl;
     segmentedSieve(left,right);
 }
