@@ -26,6 +26,7 @@ void segmentedSieve(ll left,ll right){
     isprime.set();
     for(ll i=left;i<=right;i++){
             bool isitprime = true;
+        if(i%2==0&&i>2)continue;
         for(ll x:primesdivisor){
             if(i%x==0&&i!=x){
                     isitprime=false;
